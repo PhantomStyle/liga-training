@@ -8,6 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import ru.liga.dao.DepartmentDao;
+import ru.liga.dao.EmployeeDao;
 
 import javax.sql.DataSource;
 
@@ -39,6 +40,11 @@ public class TestDaoSpringConfig {
         dataSource.setUsername(user);
         dataSource.setPassword(password);
         return dataSource;
+    }
+
+    @Bean
+    public EmployeeDao employeeDao() {
+        return new EmployeeDao(new JdbcTemplate(dataSource()));
     }
 
     @Bean

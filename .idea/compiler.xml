@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="db" />
+        <module name="hibernate" />
+        <module name="mybatis" />
+        <module name="spring-jdbc" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="db" target="1.8" />
+      <module name="hibernate" target="1.8" />
+      <module name="liga-training" target="1.5" />
+      <module name="mybatis" target="1.8" />
+      <module name="spring-jdbc" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

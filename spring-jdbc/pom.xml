@@ -53,7 +53,7 @@
         <profile>
             <id>sqlite</id>
             <properties>
-                <database.url>jdbc:sqlite:C:/projects/liga-training/botdb.s3db</database.url>
+                <database.url>jdbc:sqlite:C:\Projects\JavaDay12_1\liga-training\botdb.s3db</database.url>
                 <database.driver>org.sqlite.JDBC</database.driver>
                 <database.user></database.user>
                 <database.password></database.password>

@@ -18,6 +18,9 @@ public class DepartmentDaoTest {
     @Autowired
     private DepartmentDao departmentDao;
 
+    @Autowired
+    private EmployeeDao employeeDao;
+
     @Before
     public void init() {
 
@@ -26,6 +29,11 @@ public class DepartmentDaoTest {
     @Test
     public void findByFoundationYearTest() {
         assertEquals(1, departmentDao.findByFoundationYear(1933).size());
+    }
+
+    @Test
+    public void findByBirthdayTest(){
+        assertEquals("Владимир Николаевич Чубариков", employeeDao.findByBirthday("1951-09-05").getFio());
     }
 
 }
