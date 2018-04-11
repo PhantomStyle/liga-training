@@ -23,7 +23,7 @@ public class DepartmentDao {
     }
 
     public DepartmentEntity insert(DepartmentEntity entity) {
-        String sqlInsert = "INSERT INTO department (title, address, foundation_year)"
+        String sqlInsert = "INSERT INTO liga.department (title, address, foundation_year)"
                 + " VALUES (?, ?, ?)";
         jdbcTemplate.update(sqlInsert, new Object[]{
                 entity.getTitle(),

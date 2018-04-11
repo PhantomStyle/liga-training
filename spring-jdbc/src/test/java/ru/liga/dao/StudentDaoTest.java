@@ -17,6 +17,7 @@ public class StudentDaoTest {
 
     @Test
     public void whenId3Return(){
+        System.out.println(studentDao.selectById(3L).size());
         assertEquals(0, studentDao.selectById(3L).size());
     }
 }

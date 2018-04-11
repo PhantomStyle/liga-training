@@ -31,7 +31,7 @@ public class EmployeeDao {
 
     public EmployeeEntity insert(EmployeeEntity entity) {
         String sqlInsert = "INSERT INTO liga.employee (fio, gender,department_id, degree,  position, birthday)"
-                + " VALUES (?, ?, ?)";
+                + " VALUES (?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update(sqlInsert, new Object[]{
                 entity.getFio(),
                 entity.getGender(),

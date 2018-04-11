@@ -17,7 +17,7 @@ public class StudentDao {
 
     public StudentEntity insert(StudentEntity entity) {
         String sqlInsert = "INSERT INTO student (id, fio, gender,department_id, studentGroupId, birthday)"
-                + " VALUES (?, ?, ?)";
+                + " VALUES (?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update(sqlInsert, new Object[]{
                 entity.getId(),
                 entity.getFio(),
