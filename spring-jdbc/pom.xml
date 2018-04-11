@@ -43,23 +43,23 @@
         <profile>
             <id>postgres</id>
             <properties>
-                <database.url>jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=liga</database.url>
-                <database.driver>org.postgresql.Driver</database.driver>
-                <database.user>postgres</database.user>
-                <database.password>q</database.password>
-                <database.schema>liga</database.schema>
+                <liquibase.url>jdbc:postgresql://localhost:5432/postgres</liquibase.url>
+                <liquibase.username>postgres</liquibase.username>
+                <liquibase.password>aps71447</liquibase.password>
+                <liquibase.schema>liga</liquibase.schema>
+                <liquibase.driver>org.postgresql.Driver</liquibase.driver>
             </properties>
         </profile>
-        <profile>
-            <id>sqlite</id>
-            <properties>
-                <database.url>jdbc:sqlite:C:\Projects\JavaDay12_1\liga-training\botdb.s3db</database.url>
-                <database.driver>org.sqlite.JDBC</database.driver>
-                <database.user></database.user>
-                <database.password></database.password>
-                <database.schema></database.schema>
-            </properties>
-        </profile>
+        <!--<profile>-->
+            <!--<id>sqlite</id>-->
+            <!--<properties>-->
+                <!--<database.url>jdbc:sqlite:C:\Projects\JavaDay12_1\liga-training\botdb.s3db</database.url>-->
+                <!--<database.driver>org.sqlite.JDBC</database.driver>-->
+                <!--<database.user></database.user>-->
+                <!--<database.password></database.password>-->
+                <!--<database.schema></database.schema>-->
+            <!--</properties>-->
+        <!--</profile>-->
     </profiles>
 
     <dependencyManagement>

@@ -23,14 +23,14 @@ public class EmployeeDao {
     }
 
     public EmployeeEntity findById(Long id) {
-        String sql = "SELECT * FROM employee WHERE ID = ?";
+        String sql = "SELECT * FROM liga.employee WHERE ID = ?";
         List<EmployeeEntity> entities = jdbcTemplate.query(
                 sql, new Object[]{id}, new EmployeeMapper());
         return entities.isEmpty() ? null : entities.get(0);
     }
 
     public EmployeeEntity insert(EmployeeEntity entity) {
-        String sqlInsert = "INSERT INTO employee (fio, gender,department_id, degree,  position, birthday)"
+        String sqlInsert = "INSERT INTO liga.employee (fio, gender,department_id, degree,  position, birthday)"
                 + " VALUES (?, ?, ?)";
         jdbcTemplate.update(sqlInsert, new Object[]{
                 entity.getFio(),
@@ -44,13 +44,13 @@ public class EmployeeDao {
     }
 
     public EmployeeEntity update(EmployeeEntity entity) {
-        String sqlUpdate = "update employee set" +
+        String sqlUpdate = "update liga.employee set" +
                 " fio = ?," +
                 " gender = ?," +
-                " department_id = ?" +
+                " department_id = ?," +
                 " degree = ?," +
                 " position = ?," +
-                " birthday" +
+                " birthday = ?" +
                 " where id = ?";
         jdbcTemplate.update(sqlUpdate, new Object[]{
                 entity.getFio(),
@@ -65,19 +65,19 @@ public class EmployeeDao {
     }
 
     public void delete(Long entityId) {
-        String sqlDelete = "delete from employee where id = ?";
+        String sqlDelete = "delete from liga.employee where id = ?";
         jdbcTemplate.update(sqlDelete, new Object[]{entityId});
     }
 
     public List<EmployeeEntity> findByFio(String fio) {
-        String sql = "SELECT * FROM employee WHERE fio = ?";
+        String sql = "SELECT * FROM liga.employee WHERE fio = ?";
         List<EmployeeEntity> entities = jdbcTemplate.query(
                 sql, new Object[]{fio}, new EmployeeMapper());
         return entities;
     }
 
     public EmployeeEntity findByBirthday(String birthday) {
-        String sql = "SELECT * FROM employee WHERE birthday = ?";
+        String sql = "SELECT * FROM liga.employee WHERE birthday = ?";
         List<EmployeeEntity> entities = jdbcTemplate.query(
                 sql, new Object[]{birthday}, new EmployeeMapper());
         return entities.isEmpty() ? null : entities.get(0);

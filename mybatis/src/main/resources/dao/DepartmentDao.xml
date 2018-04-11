@@ -12,19 +12,19 @@
     </resultMap>
 
     <delete id="delete" parameterType="long">
-        delete from department where id = #{id}
+        delete from department_id where id = #{id}
     </delete>
 
     <select id="select" resultMap="DepartmentMap">
-        SELECT * FROM department
+        SELECT * FROM department_id
         WHERE id = #{id}
     </select>
 
     <select id="selectByFoundationYear" resultMap="DepartmentMap">
-        SELECT * FROM department WHERE foundation_year = #{foundationYear}
+        SELECT * FROM department_id WHERE foundation_year = #{foundationYear}
     </select>
     <select id="selectByTitle" resultMap="DepartmentMap">
-   SELECT * FROM department WHERE title = #{title}
+   SELECT * FROM department_id WHERE title = #{title}
     </select>
 
     <insert id="insert"
@@ -32,7 +32,7 @@
             statementType="PREPARED"
             keyProperty="id"
             useGeneratedKeys="true">
-        insert into department (title, address, foundation_year)
+        insert into department_id (title, address, foundation_year)
         values (
         #{title, jdbcType=VARCHAR},
         #{address, jdbcType=VARCHAR},
@@ -41,7 +41,7 @@
     </insert>
 
     <update id="update" parameterType="DepartmentEntity">
-        update department
+        update department_id
         SET
            title = #{title, jdbcType=VARCHAR},
            address = #{address, jdbcType=VARCHAR},
