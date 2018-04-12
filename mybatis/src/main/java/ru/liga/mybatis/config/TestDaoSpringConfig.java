@@ -8,8 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import ru.liga.mybatis.dao.DepartmentDao;
 
 
 import javax.sql.DataSource;
@@ -64,5 +66,10 @@ public class TestDaoSpringConfig {
         sessionFactory.setConfigLocation(new ClassPathResource("config/mybatisConfig.xml"));
         return sessionFactory.getObject();
     }
+//
+//    @Bean
+//    public DepartmentDao departmentDao() {
+//        return new DepartmentDao(new JdbcTemplate(dataSource()));
+//    }
 
 }

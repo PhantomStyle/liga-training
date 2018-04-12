@@ -22,7 +22,7 @@ public class DepartmentEntity implements Serializable {
     private String address;
     @Column(name = "FOUNDATION_YEAR", unique = false, nullable = false)
     private Integer foundationYear;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "department", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<EmployeeEntity> employees;
 
 

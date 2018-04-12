@@ -43,10 +43,10 @@
         <profile>
             <id>postgres</id>
             <properties>
-                <database.url>jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=liga</database.url>
+                <database.url>jdbc:postgresql://localhost:5432/postgres</database.url>
                 <database.driver>org.postgresql.Driver</database.driver>
                 <database.user>postgres</database.user>
-                <database.password>q</database.password>
+                <database.password>1</database.password>
                 <database.schema>liga</database.schema>
             </properties>
         </profile>

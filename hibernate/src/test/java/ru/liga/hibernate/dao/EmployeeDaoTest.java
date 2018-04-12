@@ -20,7 +20,7 @@ public class EmployeeDaoTest {
 
     @Test
     public void findByIdTest() {
-        EmployeeEntity entity = employeeDao.select(1L);
+        EmployeeEntity entity = employeeDao.select(0L);
         assertEquals("Владимир Николаевич Чубариков", entity.getFio());
         assertEquals("Механико-математический", entity.getDepartment().getTitle());
     }

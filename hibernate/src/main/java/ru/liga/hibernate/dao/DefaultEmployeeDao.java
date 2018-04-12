@@ -33,8 +33,8 @@ public class DefaultEmployeeDao implements EmployeeDao {
     @Override
     public List<EmployeeEntity> selectByDepartmentId(Long departmentId) {
         return (List<EmployeeEntity>) em
-                .createQuery("FROM EmployeeEntity WHERE departmentId = :departmentId")
-                .setParameter("department_id", departmentId)
+                .createQuery("FROM EmployeeEntity WHERE department_id = :departmentId")
+                .setParameter("departmentId", departmentId)
                 .getResultList();
     }
 

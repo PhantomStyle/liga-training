@@ -9,22 +9,35 @@
         <result property="title" column="title"/>
         <result property="address" column="address"/>
         <result property="foundationYear" column="foundation_year"/>
+        <collection
+                property="department_id"
+                javaType="List"
+                column="id"
+                ofType="EmployeeEntity"
+                select="selectByDepartment_id"
+        />
     </resultMap>
 
     <delete id="delete" parameterType="long">
-        delete from department_id where id = #{id}
+        delete from department_id
+        where id = #{id}
     </delete>
 
     <select id="select" resultMap="DepartmentMap">
-        SELECT * FROM department_id
+        SELECT *
+        FROM department_id
         WHERE id = #{id}
     </select>
 
     <select id="selectByFoundationYear" resultMap="DepartmentMap">
-        SELECT * FROM department_id WHERE foundation_year = #{foundationYear}
+        SELECT *
+        FROM department_id
+        WHERE foundation_year = #{foundationYear}
     </select>
     <select id="selectByTitle" resultMap="DepartmentMap">
-   SELECT * FROM department_id WHERE title = #{title}
+        SELECT *
+        FROM department_id
+        WHERE title = #{title}
     </select>
 
     <insert id="insert"
@@ -34,18 +47,18 @@
             useGeneratedKeys="true">
         insert into department_id (title, address, foundation_year)
         values (
-        #{title, jdbcType=VARCHAR},
-        #{address, jdbcType=VARCHAR},
-        #{foundation_year, jdbcType=SMALLINT}
+            #{title, jdbcType=VARCHAR},
+            #{address, jdbcType=VARCHAR},
+            #{foundation_year, jdbcType=SMALLINT}
         )
     </insert>
 
     <update id="update" parameterType="DepartmentEntity">
         update department_id
         SET
-           title = #{title, jdbcType=VARCHAR},
-           address = #{address, jdbcType=VARCHAR},
-           foundation_year = #{foundation_year, jdbcType=SMALLINT}
+            title           = #{title, jdbcType=VARCHAR},
+            address         = #{address, jdbcType=VARCHAR},
+            foundation_year = #{foundation_year, jdbcType=SMALLINT}
         WHERE id = #{id}
     </update>
 
