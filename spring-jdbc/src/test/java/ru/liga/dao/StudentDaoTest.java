@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.liga.config.TestDaoSpringConfig;
+import ru.liga.entity.StudentEntity;
+
+import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,7 +20,12 @@ public class StudentDaoTest {
 
     @Test
     public void whenId3Return(){
-        System.out.println(studentDao.selectById(3L).size());
-        assertEquals(0, studentDao.selectById(3L).size());
+        assertEquals("Котвица Мария Александровна", studentDao.findById(3L).getFio());
+    }
+
+    @Test
+    public void updateTest(){
+        studentDao.update(new StudentEntity(1L, "Михайлов Илья Николаевич", "Male", 1L, 1L, LocalDate.of(1998, 5, 29)));
+        assertEquals("Михайлов Илья Николаевич", studentDao.findById(1L).getFio());
     }
 }

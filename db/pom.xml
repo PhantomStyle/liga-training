@@ -16,7 +16,7 @@
             <properties>
                 <liquibase.url>jdbc:postgresql://localhost:5432/postgres</liquibase.url>
                 <liquibase.username>postgres</liquibase.username>
-                <liquibase.password>1</liquibase.password>
+                <liquibase.password>aps71447</liquibase.password>
                 <liquibase.schema>liga</liquibase.schema>
                 <liquibase.driver>org.postgresql.Driver</liquibase.driver>
             </properties>
@@ -24,7 +24,7 @@
         <!--<profile>-->
             <!--<id>sqlite</id>-->
             <!--<properties>-->
-                <!--<liquibase.url>jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=liga</liquibase.url>-->
+                <!--<liquibase.url>jdbc:postgresql://localhost:5432/postgres</liquibase.url>-->
             <!--</properties>-->
         <!--</profile>-->
     </profiles>
@@ -76,6 +76,9 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.1</version>
         </dependency>
+
+
+
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>

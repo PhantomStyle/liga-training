@@ -12,13 +12,13 @@ public class EmployeeMapper implements RowMapper {
     @Override
     public Object mapRow(ResultSet rs, int i) throws SQLException {
         return new EmployeeEntity(
-                rs.getString("id"),
+                rs.getLong("id"),
                 rs.getString("fio"),
                 rs.getString("gender"),
-                rs.getString("department_id"),
+                rs.getLong("department_id"),
                 rs.getString("degree"),
                 rs.getString("position"),
-                LocalDate.parse(rs.getString("birthday"))
+                rs.getDate("birthday").toLocalDate()
         );
     }
 }

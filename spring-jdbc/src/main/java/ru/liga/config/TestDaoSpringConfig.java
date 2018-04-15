@@ -10,6 +10,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import ru.liga.dao.DepartmentDao;
 import ru.liga.dao.EmployeeDao;
 import ru.liga.dao.StudentDao;
+import ru.liga.repository.DbDepartmentRepository;
+import ru.liga.repository.DepartmentRepository;
 
 import javax.sql.DataSource;
 
@@ -56,6 +58,11 @@ public class TestDaoSpringConfig {
     @Bean
     public StudentDao studentDao() {
         return new StudentDao(new JdbcTemplate(dataSource()));
+    }
+
+    @Bean
+    public DepartmentRepository departmentRepository() {
+        return new DbDepartmentRepository(new JdbcTemplate(dataSource()));
     }
 
 }

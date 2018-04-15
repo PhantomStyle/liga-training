@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.liga.config.TestDaoSpringConfig;
+import ru.liga.domain.Employee;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,8 +19,7 @@ public class DepartmentDaoTest {
     @Autowired
     private DepartmentDao departmentDao;
 
-    @Autowired
-    private EmployeeDao employeeDao;
+
 
     @Before
     public void init() {
@@ -31,9 +31,6 @@ public class DepartmentDaoTest {
         assertEquals(1, departmentDao.findByFoundationYear(1933).size());
     }
 
-    @Test
-    public void findByBirthdayTest(){
-        assertEquals("Владимир Николаевич Чубариков", employeeDao.findByBirthday("1951-09-05").getFio());
-    }
+
 
 }
