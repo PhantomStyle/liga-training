@@ -10,14 +10,14 @@ import java.util.List;
 
 public interface DepartmentDao {
 
-    @Insert("insert into department_id (title, address, foundation_year)\n" +
+    @Insert("insert into department (title, address, foundation_year)\n" +
             "        values (\n" +
             "            #{title, jdbcType=VARCHAR},\n" +
             "            #{address, jdbcType=VARCHAR},\n" +
             "            #{foundation_year, jdbcType=SMALLINT}")
     DepartmentEntity insert(DepartmentEntity entity);
 
-    @Update("update department_id\n" +
+    @Update("update department\n" +
             "        SET\n" +
             "            title           = #{title, jdbcType=VARCHAR},\n" +
             "            address         = #{address, jdbcType=VARCHAR},\n" +
@@ -25,22 +25,22 @@ public interface DepartmentDao {
             "        WHERE id = #{id}")
     DepartmentEntity update(DepartmentEntity entity);
 
-    @Delete("delete from department_id\n" +
+    @Delete("delete from department\n" +
             "        where id = #{id}")
     void delete(Long entityId);
 
     @Select("SELECT *\n" +
-            "        FROM department_id\n" +
+            "        FROM department\n" +
             "        WHERE id = #{id}")
     DepartmentEntity select(Long id);
 
     @Select("SELECT *\n" +
-            "        FROM department_id\n" +
+            "        FROM department\n" +
             "        WHERE foundation_year = #{foundationYear}")
     List<DepartmentEntity> selectByFoundationYear(Integer year);
 
     @Select("SELECT *\n" +
-            "        FROM department_id\n" +
+            "        FROM department\n" +
             "        WHERE title = #{title}")
     DepartmentEntity selectByTitle(String title);
 }

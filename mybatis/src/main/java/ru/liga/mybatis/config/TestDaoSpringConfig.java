@@ -66,7 +66,7 @@ public class TestDaoSpringConfig {
         sessionFactory.setConfigLocation(new ClassPathResource("config/mybatisConfig.xml"));
         return sessionFactory.getObject();
     }
-//
+
 //    @Bean
 //    public DepartmentDao departmentDao() {
 //        return new DepartmentDao(new JdbcTemplate(dataSource()));

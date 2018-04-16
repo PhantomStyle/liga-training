@@ -10,7 +10,7 @@ CREATE TABLE student (
   course             INTEGER,
   birthday           DATE NOT NULL
 );
-CREATE TABLE department (
+CREATE TABLE department_id (
   id                              BIGINT                   PRIMARY KEY IDENTITY,
   title                           VARCHAR(200)             NOT NULL,
   address                         VARCHAR(1000)            NOT NULL,
